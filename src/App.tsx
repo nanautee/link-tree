@@ -28,8 +28,8 @@ function LinkCard({
         <img
           className="link-card__logo"
           src={ONLYFANS_ICON_SRC}
-          width={24}
-          height={24}
+          width={40}
+          height={40}
           alt=""
           decoding="async"
         />
