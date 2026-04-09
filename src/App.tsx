@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import {
   bannerUrl,
@@ -41,19 +42,22 @@ function LinkCard({
 
 export function App() {
   return (
-    <main className="landing" role="main">
-      <div
-        className="landing__bg"
-        style={{ backgroundImage: `url(${JSON.stringify(bannerUrl)})` }}
-        aria-hidden
-      />
-      <div className="landing__scrim" aria-hidden />
-      <div className="landing__content">
-        <nav className="landing__nav" aria-label="Ссылки на страницы">
-          <LinkCard href={linkPrimary} label={labelPrimary} />
-          <LinkCard href={linkSecondary} label={labelSecondary} />
-        </nav>
-      </div>
-    </main>
+    <>
+      <main className="landing" role="main">
+        <div
+          className="landing__bg"
+          style={{ backgroundImage: `url(${JSON.stringify(bannerUrl)})` }}
+          aria-hidden
+        />
+        <div className="landing__scrim" aria-hidden />
+        <div className="landing__content">
+          <nav className="landing__nav" aria-label="Ссылки на страницы">
+            <LinkCard href={linkPrimary} label={labelPrimary} />
+            <LinkCard href={linkSecondary} label={labelSecondary} />
+          </nav>
+        </div>
+      </main>
+      <Analytics />
+    </>
   );
 }
